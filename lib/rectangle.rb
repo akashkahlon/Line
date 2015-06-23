@@ -1,9 +1,11 @@
 class Rectangle
-  attr_accessor :length_line, :breadth_line
+  #attr_accessor :point_one, :point_two, :point_three, :point:four, :length, :breadth
 
-  def intialize(length_line, breadth_line)
-    @length_line = length_line
-    @breadth_line = breadth_line
+  def intialize(point_one, point_two, point_three, point_four)
+    @point_one = point_one
+    @point_two = point_two
+    @point_three = point_three
+    @point_four = point_four
   end
 
   def calculate_area
