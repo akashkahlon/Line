@@ -11,18 +11,11 @@ class Line
     return distance
 
   end
-  def self.point_comparison(point_one, point_two)
-    if point_one.x_coordinate == point_two.x_coordinate && point_one.y_coordinate == point_two.y_coordinate
-      return true
-    else
-      return false
-    end
-  end
 
   def self.line_equality(line_one, line_two)
-    if point_comparison(line_one.initial_point, line_two.initial_point) && point_comparison(line_one.final_point, line_two.final_point)
+    if Point.are_equal(line_one.initial_point, line_two.initial_point) && Point.are_equal(line_one.final_point, line_two.final_point)
       return true
-    elsif point_comparison(line_one.initial_point, line_two.final_point) && point_comparison(line_one.final_point, line_two.initial_point)
+    elsif Point.are_equal(line_one.initial_point, line_two.final_point) && Point.are_equal(line_one.final_point, line_two.initial_point)
       return true
     else
       return false
@@ -31,9 +24,9 @@ class Line
 
 
   def line_equality_without_self(line_two)
-    if Line.point_comparison(self.initial_point, line_two.initial_point) && Line.point_comparison(self.final_point, line_two.final_point)
+    if Point.are_equal(self.initial_point, line_two.initial_point) && Point.are_equal(self.final_point, line_two.final_point)
       return true
-    elsif Line.point_comparison(self.initial_point, line_two.final_point) && Line.point_comparison(self.final_point, line_two.initial_point)
+    elsif Point.are_equal(self.initial_point, line_two.final_point) && Point.are_equal(self.final_point, line_two.initial_point)
       return true
     else
       return false
