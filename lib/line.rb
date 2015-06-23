@@ -1,17 +1,15 @@
 class Line
-  attr_accessor :initial_x_coordinate, :initial_y_coordinate, :final_x_coordinate, :final_y_coordinate
+  attr_accessor :initial_point, :final_point
   
-  def initialize(initial_x_coordinate, initial_y_coordinate, final_x_coordinate, final_y_coordinate)
-    @initial_x_coordinate = initial_x_coordinate
-    @initial_y_coordinate = initial_y_coordinate
-    @final_x_coordinate = final_x_coordinate
-    @final_y_coordinate = final_y_coordinate
+  def initialize(initial_point, final_point)
+   @initial_point = initial_point
+   @final_point = final_point
   end
 
- def distance
-   distance = Math.sqrt((self.initial_x_coordinate - self.final_x_coordinate) ** 2 + (self.initial_y_coordinate - self.final_y_coordinate) ** 2 )
-   puts "distance: #{distance}"
-   return distance
+  def distance
+    distance = Math.sqrt((self.initial_point.x_coordinate - self.final_point.x_coordinate) ** 2 + (self.initial_point.y_coordinate - self.final_point.y_coordinate) ** 2 )
+    return distance
+
   end
 end
 
