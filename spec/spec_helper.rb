@@ -1,6 +1,7 @@
 require "./lib/line"
 require "./lib/point"
 require "./lib/rectangle"
+require "./lib/square"
 
 RSpec.configure do |config|
   config.expect_with  :rspec do |expectation|
