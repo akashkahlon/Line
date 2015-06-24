@@ -60,3 +60,23 @@ describe "perimeter"do
     expect(Rectangle.new_initialize(length, breadth).calculate_perimeter).to eq 18
   end
 end
+
+describe "validate" do
+  it "returns true if points entered make a valid rectangle" do
+    point_one = Point.new(0,0)
+    point_two = Point.new(0,5)
+    point_three = Point.new(4,5)
+    point_four = Point.new(4,0)
+    expect(Rectangle.validate(point_one, point_two, point_three, point_four)).to eq true
+  
+  end
+
+  it "returns false if points entered dont make a valid point" do
+    point_one = Point.new(0,0)
+    point_two = Point.new(0,5)
+    point_three = Point.new(0,7)
+    point_four = Point.new(9,0)
+    expect(Rectangle.validate(point_one, point_two, point_three, point_four)).to eq false
+
+  end
+end
