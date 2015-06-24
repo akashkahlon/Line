@@ -11,12 +11,32 @@ class Rectangle
       false
     end
   end
-  def self.new_initialize(length, breadth)
+  def self.new_initialize(length, length_unit, breadth, breadth_unit)
+    length,breadth = Rectangle.unit_decider(length, length_unit, breadth, breadth_unit)
     point_one = Point.new(0, 0)
     point_two = Point.new(0, length)
     point_three = Point.new(breadth, length)
     point_four = Point.new(breadth,0)
     Rectangle.new(point_one, point_two, point_three, point_four)
+  end
+
+  def self.unit_decider(length, length_unit, breadth, breadth_unit)
+    if length_unit == "m"
+      length = length * 1000
+    elsif length_unit == "cm"
+      length = length * 100
+    elsif length_unit == nil || length_unit == "mm"
+      length = length
+    end
+
+    if breadth_unit == "m"
+      breadth = breadth * 1000
+    elsif breadth_unit == "cm"
+      breadth = breadth * 100
+    elsif breadth_unit == "mm" || breadth_unit == nil
+      breadth = breadth
+    end
+    return length,breadth
   end
 
   def calculate_area

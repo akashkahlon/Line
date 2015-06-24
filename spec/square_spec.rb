@@ -3,7 +3,8 @@ require 'spec_helper'
 describe "new_initialize" do
   it "takes one side as input and gives 4 points" do
     side = 5
-    square = Square.new_initialize(side)
+    unit = "mm"
+    square = Square.new_initialize(side, unit)
     expect(square.point_one.x_coordinate).to eq 0
     expect(square.point_one.y_coordinate).to eq 0
     expect(square.point_two.x_coordinate).to eq 0
@@ -18,7 +19,8 @@ end
 describe "calculate area" do
   it "takes one side and calculates the area of the square" do
     side = 5
-    square=Square.new_initialize(side)
+    unit = "mm"
+    square=Square.new_initialize(side, unit)
     expect(square.calculate_area).to eq 25
   end
 end
