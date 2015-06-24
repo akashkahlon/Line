@@ -21,14 +21,14 @@ describe "initialize" do
     point_three=Point.new(4,5)
     point_four=Point.new(4,0)
     rectangle = Rectangle.new(point_one, point_two, point_three, point_four)
-    expect(rectangle.point_one.x_coordinate).to eq 0
-    expect(rectangle.point_one.y_coordinate).to eq 0
-    expect(rectangle.point_two.x_coordinate).to eq 0
-    expect(rectangle.point_two.y_coordinate).to eq 5
-    expect(rectangle.point_three.x_coordinate).to eq 4
-    expect(rectangle.point_three.y_coordinate).to eq 5
-    expect(rectangle.point_four.x_coordinate).to eq 4
-    expect(rectangle.point_four.y_coordinate).to eq 0
+    expect(rectangle.point_one.x_coordinate).to eq point_one.x_coordinate
+    expect(rectangle.point_one.y_coordinate).to eq point_one.y_coordinate
+    expect(rectangle.point_two.x_coordinate).to eq point_two.x_coordinate
+    expect(rectangle.point_two.y_coordinate).to eq point_two.y_coordinate
+    expect(rectangle.point_three.x_coordinate).to eq point_three.x_coordinate
+    expect(rectangle.point_three.y_coordinate).to eq point_three.y_coordinate
+    expect(rectangle.point_four.x_coordinate).to eq point_four.x_coordinate
+    expect(rectangle.point_four.y_coordinate).to eq point_four.y_coordinate
   end
 end
 describe "new_initialize" do
@@ -39,10 +39,10 @@ describe "new_initialize" do
     expect(rectangle.point_one.x_coordinate).to eq 0
     expect(rectangle.point_one.y_coordinate).to eq 0
     expect(rectangle.point_two.x_coordinate).to eq 0
-    expect(rectangle.point_two.y_coordinate).to eq 5
-    expect(rectangle.point_three.x_coordinate).to eq 4
-    expect(rectangle.point_three.y_coordinate).to eq 5
-    expect(rectangle.point_four.x_coordinate).to eq 4
+    expect(rectangle.point_two.y_coordinate).to eq length
+    expect(rectangle.point_three.x_coordinate).to eq breadth
+    expect(rectangle.point_three.y_coordinate).to eq length
+    expect(rectangle.point_four.x_coordinate).to eq breadth
     expect(rectangle.point_four.y_coordinate).to eq 0
   end
 end
